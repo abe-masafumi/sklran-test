@@ -49,14 +49,7 @@ def Molding_new(clean_index,csv_file_name):
       # print(l_length)
       
       for row in range(l_length):
-        try:
-          if re.match("\D",l[row][27]) or l[row][24] == "計不":pass
-          else: おかしいリスト.append(f"{row + 1},{l[row]}")
-            
-        except IndexError:
-          print("rea-")
-          おかしいリスト.append(f"{row + 1},{l[row]}")
-          
+
         if row in clean_index:
           l[row] = list(map(lambda x : x.replace('\t',","),l[row]))
           text = ' '.join(l[row])
@@ -68,6 +61,16 @@ def Molding_new(clean_index,csv_file_name):
           arr_len = len(text)
           for _ in range(columns_len-arr_len):
             text.append("")
+          # print(text)
           l[row] = text
           # print(l[row])
+          
+        try:
+          if re.match("\D",l[row][27]) or l[row][24] == "計不":pass
+          else: おかしいリスト.append(f"{row + 1},{l[row][27]},{l[row]}")
+            
+        except IndexError:
+          おかしいリスト.append(f"{row + 1},{l[row][27]},{l[row]}")
+          continue
+          
   return l,l_length,columns_len,おかしいリスト
