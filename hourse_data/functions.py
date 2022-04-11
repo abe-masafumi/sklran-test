@@ -67,11 +67,11 @@ def Molding_new(clean_index,csv_file_name):
         try:
           # print(l[row][24])
           if re.match("\D",l[row][27]) or l[row][24] == "計不" or re.match("\d(.+\d)",l[row][24]):pass
-          else: おかしいリスト.append(f"{row + 1},{l[row][27]},{l[row]}")
+          else: おかしいリスト.append(f"{row + 1},{l[row]}")
             
         except IndexError:
           print(row)
-          おかしいリスト.append(f"{row + 1},{l[row][27]},{l[row]}")
+          おかしいリスト.append(f"{row + 1},{l[row]}")
           continue
           
   return l,l_length,columns_len,おかしいリスト
