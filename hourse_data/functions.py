@@ -1,3 +1,4 @@
+from cgi import print_arguments
 import csv
 import re
 
@@ -51,25 +52,25 @@ def Molding_new(clean_index,csv_file_name):
       for row in range(l_length):
 
         if row in clean_index:
-          l[row] = list(map(lambda x : x.replace('\t',","),l[row]))
+          l[row] = list(map(lambda x : x.replace('\t',",").strip(),l[row]))
           text = ' '.join(l[row])
-          text = text.split(",")
-          text = list(map(lambda x : x.strip(),text))
-          text = ' '.join(text)
+          text = text.replace(' ** ',"**,")
           text = text.replace(' ',",")
+          text = text.replace('),,,,',"),,,")
           text = text.split(",")
+          # print(text)
           arr_len = len(text)
           for _ in range(columns_len-arr_len):
             text.append("")
-          # print(text)
           l[row] = text
-          # print(l[row])
-          
+
         try:
-          if re.match("\D",l[row][27]) or l[row][24] == "計不":pass
+          # print(l[row][24])
+          if re.match("\D",l[row][27]) or l[row][24] == "計不" or re.match("\d(.+\d)",l[row][24]):pass
           else: おかしいリスト.append(f"{row + 1},{l[row][27]},{l[row]}")
             
         except IndexError:
+          print(row)
           おかしいリスト.append(f"{row + 1},{l[row][27]},{l[row]}")
           continue
           
