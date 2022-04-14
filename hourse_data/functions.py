@@ -67,18 +67,18 @@ def Molding_new(clean_index,csv_file_name):
           if re.match("\D",l[row][27]) and l[row][26] == "" and l[row][25] == "" and l[row][29] == "":pass
           elif l[row][24] == "計不" :pass
           # re.正規表現使いたい
-          elif l[row][24] == "464(+4)":pass
-          elif l[row][24] == "462(+5)":pass
-          elif l[row][24] == "436(-3)":pass
-          elif l[row][24] == "414(+12)":pass
-          elif l[row][24] == "397(-5)":pass
-          elif l[row][24] == "454(-22)":pass
-          elif l[row][24] == "499(+2)":pass
-          elif l[row][24] == "459(-6)":pass
-          elif l[row][24] == "435(-9)":pass
-          elif l[row][24] == "484(-3)":pass
-          elif l[row][24] == "562(-8)":pass
-          elif l[row][24] == "542(+20)":pass
+          # elif l[row][24] == "464(+4)":pass
+          # elif l[row][24] == "462(+5)":pass
+          # elif l[row][24] == "436(-3)":pass
+          # elif l[row][24] == "414(+12)":pass
+          # elif l[row][24] == "397(-5)":pass
+          # elif l[row][24] == "454(-22)":pass
+          # elif l[row][24] == "499(+2)":pass
+          # elif l[row][24] == "459(-6)":pass
+          # elif l[row][24] == "435(-9)":pass
+          # elif l[row][24] == "484(-3)":pass
+          # elif l[row][24] == "562(-8)":pass
+          # elif l[row][24] == "542(+20)":pass
           
           elif row == 0:pass
           else: 
